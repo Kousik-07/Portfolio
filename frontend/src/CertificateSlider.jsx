@@ -1,40 +1,43 @@
 import React, { useEffect, useRef } from "react";
 import gsap from "gsap";
+import myCertificateImage from "./assets/67e160b90f43d67d093d56bd_page-0001.jpg";
+import myCertificateImage2 from "./assets/PHOTO-2026-04-28-15-30-25.jpg";
+import myCertificateImage3 from "./assets/Internship-Batct_Data Set 4.jpg";
 
 const CertificateSlider = () => {
   const sliderRef = useRef(null);
 
   useEffect(() => {
     const slider = sliderRef.current;
-    // Slider-er total width mapchi
+
     const totalWidth = slider.scrollWidth / 2;
 
     const ctx = gsap.context(() => {
       gsap.to(slider, {
-        x: `-${totalWidth}px`, // Bam dike slide hobe
-        duration: 10, // Koto druto cholbe (beshi dile slow hobe)
+        x: `-${totalWidth}px`, 
+        duration: 10, 
         ease: "none",
-        repeat: -1, // Infinite loop
+        repeat: -1,
       });
     });
 
     return () => ctx.revert();
   }, []);
 
-  // Image array (tomar certificate gulo ekhane rakho)
+
   const images = [
-    "/src/assets/67e160b90f43d67d093d56bd_page-0001.jpg",
-    "/src/assets/PHOTO-2026-04-28-15-30-25.jpg",
-    "/src/assets/Internship-Batct_Data Set 4.jpg",
+    myCertificateImage,
+    myCertificateImage2,
+    myCertificateImage3,
   ];
 
   return (
     <div className="overflow-hidden w-full py-10 relative">
-      {/* Gradient Overlay (Dui pashe halka blurry effect) */}
+
       <div className="absolute inset-0 z-10 pointer-events-none bg-linear-to-r from-[#0c1013] via-transparent to-[#0c1013]"></div>
 
       <div ref={sliderRef} className="flex gap-6 w-max items-center">
-        {/* Prothom bar images */}
+
         {images.map((img, index) => (
           <div
             key={index}
@@ -44,7 +47,7 @@ const CertificateSlider = () => {
           </div>
         ))}
 
-        {/* Repeat images jate loop-ta seamless hoy */}
+
         {images.map((img, index) => (
           <div
             key={`dup-${index}`}

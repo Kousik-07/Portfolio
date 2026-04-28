@@ -4,8 +4,6 @@ import gsap from "gsap";
 const Skills = () => {
   const sliderRef = useRef(null);
 
-  // Tomar icon gulo ekhane array-te rakho
-  // Ami dummy URL diyechi, tumi tomar assets folder theke icon use koro
   const skillIcons = [
     { name: "React", url: "https://cdn.worldvectorlogo.com/logos/react-2.svg" },
     {
@@ -37,15 +35,15 @@ const Skills = () => {
     const totalWidth = slider.scrollWidth / 2;
 
     const ctx = gsap.context(() => {
-      // Auto-sliding animation
+
       const move = gsap.to(slider, {
         x: `-${totalWidth}px`,
-        duration: 20, // Speed control koro ekhane
+        duration: 20, 
         ease: "none",
         repeat: -1,
       });
 
-      // Hover korle slider theme jabe
+
       slider.addEventListener("mouseenter", () => move.pause());
       slider.addEventListener("mouseleave", () => move.play());
     });
@@ -63,9 +61,9 @@ const Skills = () => {
         </p>
       </div>
 
-      {/* Infinite Slider Wrapper */}
+
       <div className="relative flex items-center">
-        {/* Shadow Overlays for smooth entry/exit */}
+
         <div className="absolute left-0 z-10 w-20 h-full bg-linear-to-r from-[#0c1013] to-transparent"></div>
         <div className="absolute right-0 z-10 w-20 h-full bg-linear-to-l from-[#0c1013] to-transparent"></div>
 
@@ -73,7 +71,7 @@ const Skills = () => {
           ref={sliderRef}
           className="flex gap-8 md:gap-16 items-center w-max"
         >
-          {/* Double map korchi seamless loop-er jonno */}
+
           {[...skillIcons, ...skillIcons].map((skill, index) => (
             <div
               key={index}

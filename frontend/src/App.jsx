@@ -7,14 +7,15 @@ import CertificateSlider from "./CertificateSlider";
 import Skills from "./Skills";
 import Projects from "./Projects";
 import Contact from "./Contact";
-
+import mylogo from "./assets/Untitled.png";
+import myPhoto from "./assets/Adobe Express - file.png";
 gsap.registerPlugin(ScrollTrigger);
 function App() {
   const el = useRef(null); 
   const mainRef = useRef(null); 
 
   useEffect(() => {
-    // --- Typed.js Animation ---
+
     const typed = new Typed(el.current, {
       strings: [
         "Modern Web Experiences",
@@ -99,11 +100,7 @@ function App() {
 
         {/* Navigation */}
         <nav className="h-20 w-full p-10 flex justify-between items-center relative z-50">
-          <img
-            src="/src/assets/Untitled.png"
-            alt="logo"
-            className="h-30 object-cover"
-          />
+          <img src={mylogo} alt="logo" className="h-30 object-cover" />
           <ul className="gap-7 text-xl hidden md:flex">
             <li className="cursor-pointer hover:scale-110 transition-transform">
               <a href="#home">Home</a>
@@ -162,7 +159,7 @@ function App() {
             <div className="right-content w-full md:w-1/2 flex justify-center">
               <div className="box h-70 w-70 md:h-112.5 md:w-112.5 bg-linear-to-b from-sky-400/20 via-gray-800 to-black rounded-full overflow-hidden flex justify-center items-center border border-gray-700">
                 <img
-                  src="/src/assets/Adobe Express - file.png"
+                  src={myPhoto}
                   alt="Profile"
                   className="w-4/5 object-contain"
                 />

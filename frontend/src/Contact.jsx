@@ -44,7 +44,7 @@ const Contact = () => {
             project in mind? Let's connect.
           </p>
 
-          {/* Email with Hover Effect */}
+
           <div className="mb-10">
             <a
               href="mailto:kousikjana@gmail.com"
@@ -54,7 +54,7 @@ const Contact = () => {
             </a>
           </div>
 
-          {/* Social Icons */}
+
           <div className="flex gap-8 text-3xl">
             <a
               href="https://github.com/Kousik-07"

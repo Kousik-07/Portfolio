@@ -16,7 +16,7 @@ const ContactForm = () => {
         import.meta.env.VITE_TEMPLATEID
       );
       
-    // Apnar IDs gulo ekhane boshan
+
     emailjs
       .sendForm(
         import.meta.env.VITE_SERVICEID,
@@ -30,7 +30,7 @@ const ContactForm = () => {
         (result) => {
           alert("Message Sent Successfully!");
           setIsSending(false);
-          e.target.reset(); // Form clear hobe
+          e.target.reset(); 
         },
         (error) => {
           alert("Something went wrong. Please try again.");
@@ -47,7 +47,7 @@ const ContactForm = () => {
           <label className="text-sm font-mono text-gray-400">Full Name</label>
           <input
             type="text"
-            name="name" // Template er {{name}} er sathe match thakte hobe
+            name="name" 
             required
             className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300 transition-colors"
           />
@@ -59,7 +59,7 @@ const ContactForm = () => {
           </label>
           <input
             type="email"
-            name="email" // Template er {{email}} er sathe match thakte hobe
+            name="email" 
             required
             className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300 transition-colors"
           />
@@ -68,7 +68,7 @@ const ContactForm = () => {
         <div className="flex flex-col gap-2">
           <label className="text-sm font-mono text-gray-400">Message</label>
           <textarea
-            name="message" // Template er {{message}} er sathe match thakte hobe
+            name="message"
             rows="4"
             required
             className="bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-amber-300 transition-colors resize-none"
